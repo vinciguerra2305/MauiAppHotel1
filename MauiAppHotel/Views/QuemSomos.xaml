@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppHotel.Views.QuemSomos"
+             Title="Quem Somos"
+             BackgroundColor="{StaticResource Gray100}">
+
+    <VerticalStackLayout Padding="25"
+                         Spacing="20"
+                         VerticalOptions="Center">
+
+        <Label Text="Quem Somos"
+               FontSize="35"
+               FontAttributes="Bold"
+               HorizontalOptions="Center"
+               TextColor="{StaticResource Primary}" />
+
+        <Label Text="Olá! Meu nome é Anderson Vinciguerra."
+               FontSize="20"
+               FontAttributes="Bold"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Sou estudante de Desenvolvimento de Sistemas e desenvolvi este projeto como parte do meu aprendizado em programação."
+               FontSize="16"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Este aplicativo foi desenvolvido utilizando .NET MAUI e tem como objetivo facilitar o cálculo de diárias e a contratação de hospedagens."
+               FontSize="16"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Desenvolvedor: Anderson Vinciguerra"
+               FontSize="16"
+               HorizontalTextAlignment="Center" />
+
+        <Label Text="Ano: 2026"
+               FontSize="16"
+               HorizontalTextAlignment="Center" />
+
+        <Button Text="Voltar"
+                Clicked="Button_Voltar_Clicked" />
+
+    </VerticalStackLayout>
+
+</ContentPage>
