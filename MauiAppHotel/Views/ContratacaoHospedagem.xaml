@@ -11,12 +11,13 @@
                          Spacing="10">
 
         <Label Text="Cálculo da Diária"
-               FontFamily="Kalam"
-               FontSize="50"
-               TextColor="{StaticResource Primary}" />
+               FontFamily="OpenSans.Regular"
+               FontSize="30"
+               TextColor="Black" />
 
         <Frame Padding="10">
             <VerticalStackLayout>
+
                 <Grid RowDefinitions="Auto, Auto"
                       ColumnDefinitions="*, *, 2*">
 
@@ -24,7 +25,7 @@
                            Text="Adultos:" />
 
                     <Label Grid.Row="0" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
+                           TextColor="Black"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_adultos}"/>
 
@@ -38,7 +39,7 @@
                            Text="Crianças:" />
 
                     <Label Grid.Row="1" Grid.Column="1"
-                           TextColor="{StaticResource Primary}"
+                           TextColor="black"
                            Text="{Binding Value}"
                            BindingContext="{x:Reference stp_criancas}"/>
 
@@ -53,27 +54,30 @@
                     <VerticalStackLayout>
 
                         <Label Text="Escolha sua Suíte"
+                               TextColor="Blue"
                                TextTransform="Uppercase"
-                               FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                               FontSize="Subtitle"/>
+
 
                         <Picker x:Name="pck_quarto"
-                                Title="Selecione sua Acomodação" />
+                                Title="Selecione sua Acomodação"
+                                HorizontalOptions="Center"
+                                ItemDisplayBinding="{Binding Descricao}"/>
                     </VerticalStackLayout>
                 </Frame>
 
-                <Frame Padding="10"
-                       Margin="10">
+                <Frame Padding="10" Margin="10">
                     <VerticalStackLayout Spacing="10">
 
                         <Label Text="Período da Estadia"
                                TextTransform="Uppercase"
                                FontSize="Subtitle"
-                               TextColor="{StaticResource Primary}"/>
+                               TextColor="Blue"/>
 
                         <HorizontalStackLayout HorizontalOptions="Center">
                             <Label Text="Check-in:" />
                             <DatePicker x:Name="dtpck_checkin"
+                                        DateSelected="dtpck_checkin_DateSelected"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
 
@@ -82,18 +86,64 @@
                             <DatePicker x:Name="dtpck_checkout"
                                         Format="dd/MM/yyyy" />
                         </HorizontalStackLayout>
+
                     </VerticalStackLayout>
                 </Frame>
 
                 <VerticalStackLayout Spacing="8">
 
-                    <Button Text="Avançar"
-            Clicked="Button_Clicked" />
+                    <Frame Padding="10" Margin="10">
+                        <VerticalStackLayout Spacing="10">
 
-                    <Button Text="Quem Somos"
-            Clicked="Button_Clicked1" />
+                            <Label Text="Refeições"
+                                   TextTransform="Uppercase"
+                                   FontSize="Subtitle"
+                                   TextColor="Blue" />
+
+                            <Grid ColumnDefinitions="*, Auto"
+                                  RowDefinitions="Auto, Auto"
+                                  RowSpacing="15"
+                                  ColumnSpacing="10">
+
+                                <Label Grid.Row="0"
+                                       Grid.Column="0"
+                                       Text="Café da manhã"
+                                       VerticalOptions="Center"/>
+
+                                <Switch Grid.Row="0"
+                                        Grid.Column="1"
+                                        x:Name="sw_cafe"
+                                        IsToggled="False"/>
+
+                                <Label Grid.Row="1"
+                                       Grid.Column="0"
+                                       Text="Almoço"
+                                       VerticalOptions="Center"/>
+
+                                <Switch Grid.Row="1"
+                                        Grid.Column="1"
+                                        x:Name="sw_almoco"
+                                        IsToggled="False"/>
+
+                            </Grid>
+
+                        </VerticalStackLayout>
+                    </Frame>
+
+                    <Button Text="Avançar"
+                            BackgroundColor="black"
+                            Clicked="Button_Clicked" />
+
+                    <Button Text="Conheça nosso Lazer"
+        BackgroundColor="black"
+        Clicked="OnLazerClicked" />
+
+                    <Button Text="Sobre Hotel"
+                            BackgroundColor="black"
+                            Clicked="Button_Clicked1" />
 
                 </VerticalStackLayout>
+
             </VerticalStackLayout>
         </Frame>
 
